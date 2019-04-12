@@ -1,0 +1,17 @@
+app:
+  name: digital-platfrom-core
+
+jwt:
+  header: Authorization
+  expires_in: 600 # 10 minutes
+  secret: queenvictoria
+  cookie: AUTH-TOKEN
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+      url: jdbc:mysql://localhost:3306/digital-platform-core?useSSL=false
+      username: root
+      password: 12345
