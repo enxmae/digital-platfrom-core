@@ -9,7 +9,7 @@ public class EntryPoint {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long entryPointId;
+    private Long id;
 
     private String name;
 
@@ -24,12 +24,12 @@ public class EntryPoint {
     }
 
 
-    public Long getEntryPointId() {
-        return entryPointId;
+    public Long getId() {
+        return id;
     }
 
-    public void setEntryPointId(Long entryPointId) {
-        this.entryPointId = entryPointId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
