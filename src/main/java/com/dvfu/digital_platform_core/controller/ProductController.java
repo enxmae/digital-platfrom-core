@@ -3,11 +3,13 @@ package com.dvfu.digital_platform_core.controller;
 import com.dvfu.digital_platform_core.dao.Product;
 import com.dvfu.digital_platform_core.dao.ProductEntryPoint;
 import com.dvfu.digital_platform_core.service.ProductService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@PreAuthorize("hasRole('OOPT')")
 @RequestMapping(value = "/api/products")
 public class ProductController {
 
