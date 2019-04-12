@@ -26,7 +26,6 @@ public class AuthorityServiceImpl implements AuthorityService {
 
     @Override
     public List<Authority> findByname(UserRoleName name) {
-        // TODO Auto-generated method stub
         Authority auth = this.authorityRepository.findByName(name);
         List<Authority> auths = new ArrayList<>();
         auths.add(auth);
