@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ProductEntryPointRepository extends JpaRepository<ProductEntryPoint, Long> {
 
-    List<ProductEntryPoint> findProductEntryPoint_EntryPoint(Long id);
+    List<ProductEntryPoint> findProductEntryPoint_EntryPointByProduct_Id(Long id);
 
 }
