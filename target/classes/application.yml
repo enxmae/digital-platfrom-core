@@ -10,9 +10,12 @@ jwt:
 spring:
   jpa:
     hibernate:
-      ddl-auto: update
-      #ddl-auto: create-drop
+      #ddl-auto: update
+      ddl-auto: create-drop
   datasource:
       url: jdbc:mysql://localhost:3306/digital-platform-core?useSSL=false
       username: root
       password: 12345
+  jackson:
+    serialization:
+      fail-on-empty-beans : false

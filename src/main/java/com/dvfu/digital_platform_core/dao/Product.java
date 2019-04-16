@@ -1,11 +1,14 @@
 package com.dvfu.digital_platform_core.dao;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table
-public class Product {
+public class Product implements Serializable {
+
+    private static final long serialVersionUID = -6173672801831223096L;
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -14,7 +17,7 @@ public class Product {
     private String type;
 
     private String originalTitle;
-
+    @Column(length = 1000000)
     private String photo;
 
     private String location;

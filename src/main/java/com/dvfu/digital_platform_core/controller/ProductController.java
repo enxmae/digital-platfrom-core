@@ -3,14 +3,16 @@ package com.dvfu.digital_platform_core.controller;
 import com.dvfu.digital_platform_core.dao.Product;
 import com.dvfu.digital_platform_core.dao.ProductEntryPoint;
 import com.dvfu.digital_platform_core.service.ProductService;
+import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
-@PreAuthorize("hasRole('OOPT')")
 @RequestMapping(value = "/api/products")
+@PreAuthorize("hasRole('ROLE_USER')")
 public class ProductController {
 
     private final ProductService productService;
@@ -24,6 +26,7 @@ public class ProductController {
         return productService.findProductEntryPoints(productId);
     }
 */
+
     @GetMapping
     public List<Product> getAll() {
         return productService.findAll();
@@ -33,6 +36,7 @@ public class ProductController {
     public Product getProductById(@PathVariable Long id) {
         return productService.findById(id);
     }
+
 
     @PostMapping
     public Product insert(@RequestBody Product product) {
