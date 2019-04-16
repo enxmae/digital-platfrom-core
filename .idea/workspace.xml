@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edc99512-b88c-4def-95a6-a3cf271d06ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dvfu/digital_platform_core/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dvfu/digital_platform_core/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dvfu/digital_platform_core/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dvfu/digital_platform_core/controller/UserController.class" afterDir="false" />
-    </list>
+    <list default="true" id="edc99512-b88c-4def-95a6-a3cf271d06ba" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -355,15 +345,15 @@
       <workItem from="1554894252331" duration="5203000" />
       <workItem from="1554949051655" duration="21910000" />
       <workItem from="1555144669078" duration="4283000" />
-      <workItem from="1555383538978" duration="6932000" />
+      <workItem from="1555383538978" duration="7522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40143000" />
+    <option name="totallyTimeSpent" value="40733000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1366" height="720" extended-state="6" />
+    <frame x="0" y="-1" width="1366" height="720" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
