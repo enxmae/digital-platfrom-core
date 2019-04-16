@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/products")
-@PreAuthorize("hasRole('USER')")
+@PreAuthorize("hasRole('SPNA')")
 public class ProductController {
 
     private final ProductService productService;
@@ -27,16 +27,15 @@ public class ProductController {
     }
 */
 
-    @GetMapping
-    public List<Product> getAll() {
-        return productService.findAll();
+    @GetMapping("/spna/{spna_id}")
+    public List<Product> getAll(@PathVariable Long spna_id) {
+        return productService.findAll(spna_id);
     }
 
     @GetMapping("/{id}")
     public Product getProductById(@PathVariable Long id) {
         return productService.findById(id);
     }
-
 
     @PostMapping
     public Product insert(@RequestBody Product product) {

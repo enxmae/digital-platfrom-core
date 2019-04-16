@@ -11,15 +11,15 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    private static ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
     @Override
-    public List<Product> findAll() {
-        return productRepository.findAll();
+    public List<Product> findAll(Long id) {
+        return productRepository.findAllByOwner_Id(id);
     }
 
     @Override
@@ -45,4 +45,5 @@ public class ProductServiceImpl implements ProductService {
 
         return productRepository.save(productFromDB);
     }
+
 }

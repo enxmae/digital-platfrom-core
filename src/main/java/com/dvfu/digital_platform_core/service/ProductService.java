@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ProductService {
 
-    List<Product> findAll();
+    List<Product> findAll(Long id);
 
     Product findById(Long id);
 

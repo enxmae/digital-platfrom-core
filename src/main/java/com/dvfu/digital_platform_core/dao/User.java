@@ -40,6 +40,10 @@ public class User implements UserDetails, Serializable {
             inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
     private List<Authority> authorities;
 
+    @OneToMany(mappedBy = "owner")
+    private List<Product> products;
+
+
     public Long getId() {
         return id;
     }

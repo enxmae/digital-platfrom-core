@@ -39,6 +39,9 @@ public class Product implements Serializable {
     @OneToMany(mappedBy = "product")
     private List<ProductEntryPoint> productEntryPoints;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "owner_id")
+    private User owner;
 
     public Product() {
     }
@@ -52,7 +55,8 @@ public class Product implements Serializable {
                    Integer popularLevel,
                    String mandatoryServices,
                    String extraServices,
-                   Integer anthropogenicLoad) {
+                   Integer anthropogenicLoad,
+                   User owner) {
 
         this.type = type;
         this.originalTitle = originalTitle;
@@ -65,6 +69,7 @@ public class Product implements Serializable {
         this.mandatoryServices = mandatoryServices;
         this.extraServices = extraServices;
         this.anthropogenicLoad = anthropogenicLoad;
+        this.owner = owner;
 
     }
 
@@ -165,5 +170,11 @@ public class Product implements Serializable {
         this.anthropogenicLoad = anthropogenicLoad;
     }
 
+    public User getOwner() {
+        return owner;
+    }
 
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
 }
