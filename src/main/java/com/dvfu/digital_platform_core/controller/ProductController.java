@@ -21,12 +21,6 @@ public class ProductController {
         this.productService = productService;
     }
 
-/*    @GetMapping(value = "/entry_points/{productId}")
-    public List<ProductEntryPoint> getProductCardEntryPoints(@PathVariable Long productId) {
-        return productService.findProductEntryPoints(productId);
-    }
-*/
-
     @GetMapping("/spna/{spna_id}")
     public List<Product> getAll(@PathVariable Long spna_id) {
         return productService.findAll(spna_id);

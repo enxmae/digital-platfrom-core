@@ -43,7 +43,6 @@ public class User implements UserDetails, Serializable {
     @OneToMany(mappedBy = "owner")
     private List<Product> products;
 
-
     public Long getId() {
         return id;
     }
@@ -83,7 +82,6 @@ public class User implements UserDetails, Serializable {
     }
 
     public void setLastname(String lastname) {
-
         this.lastname = lastname;
     }
 

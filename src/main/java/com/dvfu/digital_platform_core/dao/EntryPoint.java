@@ -23,7 +23,6 @@ public class EntryPoint {
         this.name = name;
     }
 
-
     public Long getId() {
         return id;
     }
@@ -39,6 +38,5 @@ public class EntryPoint {
     public void setName(String name) {
         this.name = name;
     }
-
 
 }
