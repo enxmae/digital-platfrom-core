@@ -17,6 +17,7 @@ public class Product implements Serializable {
     private String type;
 
     private String originalTitle;
+
     @Column(length = 1000000)
     private String photo;
 

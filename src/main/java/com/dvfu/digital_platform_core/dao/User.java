@@ -16,6 +16,7 @@ import java.util.List;
 public class User implements UserDetails, Serializable {
 
     private static final long serialVersionUID = -1660789895013162876L;
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,6 +43,11 @@ public class User implements UserDetails, Serializable {
 
     @OneToMany(mappedBy = "owner")
     private List<Product> products;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Tour> tours;
+
+    //owner project
 
     public Long getId() {
         return id;

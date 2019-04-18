@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/products")
-@PreAuthorize("hasRole('SPNA')")
 public class ProductController {
 
     private final ProductService productService;
@@ -21,9 +20,15 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/spna/{spna_id}")
-    public List<Product> getAll(@PathVariable Long spna_id) {
-        return productService.findAll(spna_id);
+    @GetMapping("/spna/{ownerId}")
+    @PreAuthorize("hasRole('SPNA')")
+    public List<Product> getSPNAsProducts(@PathVariable Long ownerId) {
+        return productService.getSPNAsProducts(ownerId);
+    }
+
+    @GetMapping
+    public List<Product> getAll() {
+        return productService.findAll();
     }
 
     @GetMapping("/{id}")
@@ -32,16 +37,19 @@ public class ProductController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('SPNA')")
     public Product insert(@RequestBody Product product) {
         return productService.insert(product);
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('SPNA')")
     public void delete(@PathVariable Long id) {
         productService.delete(id);
     }
 
     @PutMapping
+    @PreAuthorize("hasRole('SPNA')")
     public Product update(@RequestBody Product product) {
         return productService.update(product.getId(), product);
     }
