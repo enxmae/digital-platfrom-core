@@ -8,6 +8,8 @@ public interface ProjectService {
 
     List<Project> findAll(Long id);
 
+    List<Project> findAll();
+
     Project findById(Long id);
 
     Project insert(Project project);

@@ -29,6 +29,11 @@ public class ProjectController {
         return projectService.findById(id);
     }
 
+    @GetMapping
+    public List<Project> getAllProjects() {
+        return projectService.findAll();
+    }
+
     @PostMapping
     public Project insert(@RequestBody Project project) {
         return projectService.insert(project);
