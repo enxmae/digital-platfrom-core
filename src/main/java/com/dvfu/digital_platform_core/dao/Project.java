@@ -29,6 +29,12 @@ public class Project {
 
     private Double totalProjectFinancing;
 
+    private Double currentFinancing;
+
+    private Double minDonationSum;
+
+    private Double implementationPeriod;
+
     @OneToMany(mappedBy = "takerProject")
     private List<Donation> donations;
 
@@ -42,7 +48,10 @@ public class Project {
                    String photoBefore,
                    String uniqueness,
                    User owner,
-                   Double totalProjectFinancing) {
+                   Double totalProjectFinancing,
+                   Double currentFinancing,
+                   Double minDonationSum,
+                   Double implementationPeriod) {
 
         this.title = title;
         this.projectType = projectType;
@@ -51,6 +60,9 @@ public class Project {
         this.uniqueness = uniqueness;
         this.owner = owner;
         this.totalProjectFinancing = totalProjectFinancing;
+        this.currentFinancing = currentFinancing;
+        this.minDonationSum = minDonationSum;
+        this.implementationPeriod = implementationPeriod;
     }
 
     public Long getId() {
@@ -117,4 +129,27 @@ public class Project {
         this.totalProjectFinancing = totalProjectFinancing;
     }
 
+    public Double getCurrentFinancing() {
+        return currentFinancing;
+    }
+
+    public void setCurrentFinancing(Double currentFinancing) {
+        this.currentFinancing = currentFinancing;
+    }
+
+    public Double getMinDonationSum() {
+        return minDonationSum;
+    }
+
+    public void setMinDonationSum(Double minDonationSum) {
+        this.minDonationSum = minDonationSum;
+    }
+
+    public Double getImplementationPeriod() {
+        return implementationPeriod;
+    }
+
+    public void setImplementationPeriod(Double implementationPeriod) {
+        this.implementationPeriod = implementationPeriod;
+    }
 }
