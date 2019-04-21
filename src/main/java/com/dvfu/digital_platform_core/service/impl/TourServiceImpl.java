@@ -1,11 +1,14 @@
 package com.dvfu.digital_platform_core.service.impl;
 
+import com.dvfu.digital_platform_core.dao.Note;
 import com.dvfu.digital_platform_core.dao.Product;
 import com.dvfu.digital_platform_core.dao.Tour;
+import com.dvfu.digital_platform_core.dto.TourNotification;
 import com.dvfu.digital_platform_core.repository.TourRepository;
 import com.dvfu.digital_platform_core.service.TourService;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -17,8 +20,16 @@ public class TourServiceImpl implements TourService {
         this.tourRepository = tourRepository;
     }
 
-    public Tour findTourById(Long id) {
-        return tourRepository.getOne(id);
+    public Note findTourById(Long id){
+
+        /*Tour tour = tourRepository.getOne(id);
+        List<Product> products = tour.getProducts();
+        TourNotification tourNotification = new TourNotification();
+        tourNotification.setProductOwnerName(products.get(0).getOriginalTitle());
+        return  tourNotification;*/
+
+        return tourRepository.findTourById(id);
+
     }
 
     public Tour insert(Tour tour, List<Product> products) {

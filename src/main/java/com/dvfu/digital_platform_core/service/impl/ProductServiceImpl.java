@@ -18,10 +18,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getSPNAsProducts(Long id) {
+    public List<Product> findAll(Long id) {
         return productRepository.findAllByOwner_Id(id);
     }
-
 
     @Override
     public List<Product> findAll() {

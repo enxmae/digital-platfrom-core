@@ -1,12 +1,15 @@
 package com.dvfu.digital_platform_core.controller;
 
 
+import com.dvfu.digital_platform_core.dao.Note;
 import com.dvfu.digital_platform_core.dao.Product;
 import com.dvfu.digital_platform_core.dao.Tour;
 import com.dvfu.digital_platform_core.dao.User;
+import com.dvfu.digital_platform_core.dto.TourNotification;
 import com.dvfu.digital_platform_core.service.TourService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -20,11 +23,11 @@ public class TourController {
     }
 
     @GetMapping("/{id}")
-    public Tour getTourById(@PathVariable Long id) {
+    @ResponseBody
+    public Note getTourById(@PathVariable Long id) {
         return tourService.findTourById(id);
     }
 
-    @GetMapping("")
 
     @PostMapping
     public Tour insert(@RequestBody Tour tour, @RequestBody List<Product> products) {

@@ -23,7 +23,7 @@ public class ProductController {
     @GetMapping("/spna/{ownerId}")
     @PreAuthorize("hasRole('SPNA')")
     public List<Product> getSPNAsProducts(@PathVariable Long ownerId) {
-        return productService.getSPNAsProducts(ownerId);
+        return productService.findAll(ownerId);
     }
 
     @GetMapping

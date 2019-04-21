@@ -1,6 +1,7 @@
 package com.dvfu.digital_platform_core.service.impl;
 
 import com.dvfu.digital_platform_core.dao.Project;
+import com.dvfu.digital_platform_core.dao.ProjectProgress;
 import com.dvfu.digital_platform_core.repository.ProjectRepository;
 import com.dvfu.digital_platform_core.service.ProjectService;
 import org.springframework.beans.BeanUtils;
@@ -34,6 +35,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public Project insert(Project project) {
+        setInProgressStatus(project);
         return projectRepository.save(project);
     }
 
@@ -48,6 +50,39 @@ public class ProjectServiceImpl implements ProjectService {
 
         BeanUtils.copyProperties(project, project, "id");
 
+        if(checkCrowdfundingDone(project.getCurrentFinancing(), project.getTotalFinancing()))
+            setCrowdfundingDoneStatus(project);
+        else
+            setInProgressStatus(project);
+
         return projectRepository.save(projectFromDB);
     }
+
+    @Override
+    public boolean checkOwner(Long spnaId, Project project) {
+        Long ownerId = project.getOwner().getId();
+        return ownerId.equals(spnaId);
+    }
+
+    @Override
+    public boolean checkCrowdfundingDone(Double currentFinancing, Double totalFinancing) {
+        return currentFinancing.equals(totalFinancing);
+    }
+
+    @Override
+    public void setInProgressStatus(Project project) {
+        project.setProjectProgress(ProjectProgress.IN_PROGRESS);
+    }
+
+    @Override
+    public void setCrowdfundingDoneStatus(Project project) {
+        project.setProjectProgress(ProjectProgress.CROWDFUNDING_DONE);
+    }
+
+
+    @Override
+    public void setFinishedStatus(Project project) {
+        project.setProjectProgress(ProjectProgress.FINISHED);
+    }
+
 }

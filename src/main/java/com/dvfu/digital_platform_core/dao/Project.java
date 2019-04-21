@@ -19,6 +19,7 @@ public class Project {
 
     private String objective;
 
+    @Column(length = 1000000)
     private String photoBefore;
 
     private String uniqueness;
@@ -27,13 +28,16 @@ public class Project {
     @JoinColumn(name = "owner_id")
     private User owner;
 
-    private Double totalProjectFinancing;
+    private Double totalFinancing;
 
     private Double currentFinancing;
 
     private Double minDonationSum;
 
     private Double implementationPeriod;
+
+    @Enumerated(EnumType.STRING)
+    private ProjectProgress projectProgress;
 
     @OneToMany(mappedBy = "takerProject")
     private List<Donation> donations;
@@ -51,7 +55,8 @@ public class Project {
                    Double totalProjectFinancing,
                    Double currentFinancing,
                    Double minDonationSum,
-                   Double implementationPeriod) {
+                   Double implementationPeriod,
+                   ProjectProgress projectProgress) {
 
         this.title = title;
         this.projectType = projectType;
@@ -59,10 +64,11 @@ public class Project {
         this.photoBefore = photoBefore;
         this.uniqueness = uniqueness;
         this.owner = owner;
-        this.totalProjectFinancing = totalProjectFinancing;
+        this.totalFinancing = totalProjectFinancing;
         this.currentFinancing = currentFinancing;
         this.minDonationSum = minDonationSum;
         this.implementationPeriod = implementationPeriod;
+        this.projectProgress = projectProgress;
     }
 
     public Long getId() {
@@ -121,12 +127,12 @@ public class Project {
         this.owner = owner;
     }
 
-    public Double getTotalProjectFinancing() {
-        return totalProjectFinancing;
+    public Double getTotalFinancing() {
+        return totalFinancing;
     }
 
-    public void setTotalProjectFinancing(Double totalProjectFinancing) {
-        this.totalProjectFinancing = totalProjectFinancing;
+    public void setTotalFinancing(Double totalFinancing) {
+        this.totalFinancing = totalFinancing;
     }
 
     public Double getCurrentFinancing() {
@@ -151,5 +157,13 @@ public class Project {
 
     public void setImplementationPeriod(Double implementationPeriod) {
         this.implementationPeriod = implementationPeriod;
+    }
+
+    public ProjectProgress getProjectProgress() {
+        return projectProgress;
+    }
+
+    public void setProjectProgress(ProjectProgress projectProgress) {
+        this.projectProgress = projectProgress;
     }
 }

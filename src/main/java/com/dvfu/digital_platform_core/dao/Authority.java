@@ -29,7 +29,7 @@ public class Authority implements GrantedAuthority {
         this.name = name;
     }
 
-    @JsonIgnore
+
     public UserRoleName getName() {
         return name;
     }
