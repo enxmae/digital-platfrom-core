@@ -9,6 +9,6 @@ public interface AuthorityService {
 
     public List<Authority> findById(Long id);
 
-    public List<Authority> findByname(UserRoleName name);
+    public List<Authority> findByAuthority(UserRoleName authority);
 
 }

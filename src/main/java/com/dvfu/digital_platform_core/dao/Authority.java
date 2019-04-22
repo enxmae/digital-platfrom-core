@@ -17,21 +17,15 @@ public class Authority implements GrantedAuthority {
     Long id;
 
     @Enumerated( EnumType.STRING)
-    @Column(name="name")
-    UserRoleName name;
+    UserRoleName authority;
 
     @Override
     public String getAuthority() {
-        return name.name();
+        return authority.name();
     }
 
-    public void setName(UserRoleName name) {
-        this.name = name;
-    }
-
-
-    public UserRoleName getName() {
-        return name;
+    public void setAuthority(UserRoleName name) {
+        this.authority = name;
     }
 
     @JsonIgnore

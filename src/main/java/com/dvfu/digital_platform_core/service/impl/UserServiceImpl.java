@@ -65,7 +65,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(userRequest.getPassword()));
         user.setFirstname(userRequest.getFirstname());
         user.setLastname(userRequest.getLastname());
-        List<Authority> auth = authService.findByname(UserRoleName.ROLE_SPNA);
+        List<Authority> auth = authService.findByAuthority(UserRoleName.ROLE_SPNA);
         user.setAuthorities(auth);
         this.userRepository.save(user);
         return user;
