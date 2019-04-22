@@ -1,10 +1,15 @@
 package com.dvfu.digital_platform_core.dao;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table
-public class Donation {
+public class Donation implements Serializable {
+
+    private static final long serialVersionUID = -6173672801831223096L;
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -14,10 +19,11 @@ public class Donation {
     @JoinColumn(name = "taker_project_id")
     private Project takerProject;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "donater_user_id")
     private User donaterUser;
 
+    @JsonProperty("donationMoneyAmount")
     private Double donationMoneyAmount;
 
     public Donation() {

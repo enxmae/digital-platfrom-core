@@ -49,6 +49,9 @@ public class User implements UserDetails, Serializable {
 
     //owner project
 
+    @OneToMany(mappedBy = "donaterUser")
+    private List<Donation> donations;
+
     public Long getId() {
         return id;
     }
