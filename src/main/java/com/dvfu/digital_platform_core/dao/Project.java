@@ -30,7 +30,7 @@ public class Project {
 
     private Double totalFinancing;
 
-    private Double currentFinancing;
+    private Double currentFinancing = 0.0;
 
     private Double minDonationSum;
 

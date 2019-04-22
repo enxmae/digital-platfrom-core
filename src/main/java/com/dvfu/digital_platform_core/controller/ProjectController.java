@@ -60,7 +60,7 @@ public class ProjectController {
         if(projectService.checkOwner(spnaId, project))
             projectService.setFinishedStatus(project);
 
-        return project;
+        return projectService.update(project.getId(), project);
     }
 
 }

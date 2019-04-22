@@ -32,6 +32,7 @@ public class DonationController {
     Donation insert(@RequestBody Donation donation) {
         donationService.insert(donation);
         projectService.addMoney(donation.getTakerProject(), donation.getDonationMoneyAmount());
+        projectService.donationsIncrement(donation.getTakerProject());
 
         return donation;
     }

@@ -48,7 +48,7 @@ public class ProjectServiceImpl implements ProjectService {
     public Project update(Long id, Project project) {
         Project projectFromDB = findById(id);
 
-        BeanUtils.copyProperties(project, project, "id");
+        BeanUtils.copyProperties(project, projectFromDB, "id");
 
         if(checkCrowdfundingDone(project))
             setCrowdfundingDoneStatus(project);
@@ -95,5 +95,7 @@ public class ProjectServiceImpl implements ProjectService {
 
         if(checkCrowdfundingDone(project))
             setCrowdfundingDoneStatus(project);
+
+        update(project.getId(), project);
     }
 }

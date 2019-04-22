@@ -23,7 +23,7 @@ public class Donation implements Serializable {
     @JoinColumn(name = "donater_user_id")
     private User donaterUser;
 
-    @JsonProperty("donationMoneyAmount")
+    
     private Double donationMoneyAmount;
 
     public Donation() {
