@@ -66,7 +66,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public boolean checkCrowdfundingDone(Project project) {
-        return project.getCurrentFinancing().equals(project.getTotalFinancing());
+        return project.getCurrentFinancing() >= project.getTotalFinancing();
     }
 
     @Override
@@ -87,6 +87,8 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public void donationsIncrement(Project project) {
         project.setDonationAmount(project.getDonationAmount() + 1);
+
+        update(project.getId(), project);
     }
 
     @Override

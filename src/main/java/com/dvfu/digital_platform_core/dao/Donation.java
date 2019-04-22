@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
 @Table
@@ -23,19 +24,22 @@ public class Donation implements Serializable {
     @JoinColumn(name = "donater_user_id")
     private User donaterUser;
 
-    
     private Double donationMoneyAmount;
+
+    private LocalDateTime donationTime;
 
     public Donation() {
     }
 
     public Donation(Project takerProject,
                     User donaterUser,
-                    Double donationMoneyAmount) {
+                    Double donationMoneyAmount,
+                    LocalDateTime donationTime) {
 
         this.takerProject = takerProject;
         this.donaterUser = donaterUser;
         this.donationMoneyAmount = donationMoneyAmount;
+        this.donationTime = LocalDateTime.now();
     }
 
     public Long getId() {
@@ -70,4 +74,11 @@ public class Donation implements Serializable {
         this.donationMoneyAmount = donationMoneyAmount;
     }
 
+    public LocalDateTime getDonationTime() {
+        return donationTime;
+    }
+
+    public void setDonationTime(LocalDateTime donationTime) {
+        this.donationTime = donationTime;
+    }
 }
