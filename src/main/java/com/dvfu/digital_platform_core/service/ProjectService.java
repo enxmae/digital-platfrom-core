@@ -29,5 +29,6 @@ public interface ProjectService {
 
     void setFinishedStatus(Project project);
 
+    void likesIncrement(Project project);
 
 }

@@ -36,6 +36,8 @@ public class Project {
 
     private Double implementationPeriod;
 
+    private Integer donationAmount = 0;
+
     @Enumerated(EnumType.STRING)
     private ProjectProgress projectProgress;
 
@@ -153,6 +155,14 @@ public class Project {
 
     public Double getImplementationPeriod() {
         return implementationPeriod;
+    }
+
+    public Integer getDonationAmount() {
+        return donationAmount;
+    }
+
+    public void setDonationAmount(Integer donationAmount) {
+        this.donationAmount = donationAmount;
     }
 
     public void setImplementationPeriod(Double implementationPeriod) {

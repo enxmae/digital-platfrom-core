@@ -79,10 +79,14 @@ public class ProjectServiceImpl implements ProjectService {
         project.setProjectProgress(ProjectProgress.CROWDFUNDING_DONE);
     }
 
-
     @Override
     public void setFinishedStatus(Project project) {
         project.setProjectProgress(ProjectProgress.FINISHED);
+    }
+
+    @Override
+    public void likesIncrement(Project project) {
+        project.setDonationAmount(project.getDonationAmount() + 1);
     }
 
 }
