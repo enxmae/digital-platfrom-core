@@ -2,6 +2,7 @@ package com.dvfu.digital_platform_core.controller;
 
 import com.dvfu.digital_platform_core.dao.Donation;
 import com.dvfu.digital_platform_core.service.DonationService;
+import com.dvfu.digital_platform_core.service.ProjectService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,8 +14,11 @@ public class DonationController {
 
     private final DonationService donationService;
 
-    DonationController(DonationService donationService) {
+    private final ProjectService projectService;
+
+    DonationController(DonationService donationService, ProjectService projectService) {
         this.donationService = donationService;
+        this.projectService = projectService;
     }
 
     @GetMapping("/{project_id}")
@@ -26,7 +30,10 @@ public class DonationController {
     @PostMapping
     @PreAuthorize("hasRole('TOUR_OPERATOR')")
     Donation insert(@RequestBody Donation donation) {
-        return donationService.insert(donation);
+        donationService.insert(donation);
+        projectService.addMoney(donation.getTakerProject(), donation.getDonationMoneyAmount());
+
+        return donation;
     }
 
 }

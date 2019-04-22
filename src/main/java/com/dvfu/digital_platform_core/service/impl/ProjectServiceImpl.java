@@ -50,7 +50,7 @@ public class ProjectServiceImpl implements ProjectService {
 
         BeanUtils.copyProperties(project, project, "id");
 
-        if(checkCrowdfundingDone(project.getCurrentFinancing(), project.getTotalFinancing()))
+        if(checkCrowdfundingDone(project))
             setCrowdfundingDoneStatus(project);
         else
             setInProgressStatus(project);
@@ -65,8 +65,8 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public boolean checkCrowdfundingDone(Double currentFinancing, Double totalFinancing) {
-        return currentFinancing.equals(totalFinancing);
+    public boolean checkCrowdfundingDone(Project project) {
+        return project.getCurrentFinancing().equals(project.getTotalFinancing());
     }
 
     @Override
@@ -85,8 +85,15 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public void likesIncrement(Project project) {
+    public void donationsIncrement(Project project) {
         project.setDonationAmount(project.getDonationAmount() + 1);
     }
 
+    @Override
+    public void addMoney(Project project, Double money) {
+        project.setCurrentFinancing(project.getCurrentFinancing() + money);
+
+        if(checkCrowdfundingDone(project))
+            setCrowdfundingDoneStatus(project);
+    }
 }

@@ -40,11 +40,11 @@ public class Donation {
         this.id = id;
     }
 
-    public Project getTakerProduct() {
+    public Project getTakerProject() {
         return takerProject;
     }
 
-    public void setTakerProduct(Project takerProject) {
+    public void setTakerProject(Project takerProject) {
         this.takerProject = takerProject;
     }
 

@@ -21,7 +21,7 @@ public interface ProjectService {
 
     boolean checkOwner(Long spnaId, Project project);
 
-    boolean checkCrowdfundingDone(Double currentFinancing, Double totalProjectFinancing);
+    boolean checkCrowdfundingDone(Project project);
 
     void setCrowdfundingDoneStatus(Project project);
 
@@ -29,6 +29,8 @@ public interface ProjectService {
 
     void setFinishedStatus(Project project);
 
-    void likesIncrement(Project project);
+    void donationsIncrement(Project project);
+
+    void addMoney(Project project, Double money);
 
 }
