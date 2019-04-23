@@ -29,7 +29,7 @@ public class Product implements Serializable {
 
     private String productDescription;
 
-    private Integer popularLevel;
+    private String popularLevel;
 
     private String mandatoryServices;
 
@@ -53,7 +53,7 @@ public class Product implements Serializable {
                    String isSleepPossible,
                    String sleepPlaceDescription,
                    String productDescription,
-                   Integer popularLevel,
+                   String popularLevel,
                    String mandatoryServices,
                    String extraServices,
                    Integer anthropogenicLoad,
@@ -139,11 +139,11 @@ public class Product implements Serializable {
     }
 
 
-    public Integer getPopularLevel() {
+    public String getPopularLevel() {
         return popularLevel;
     }
 
-    public void setPopularLevel(Integer popularLevel) {
+    public void setPopularLevel(String popularLevel) {
         this.popularLevel = popularLevel;
     }
 

@@ -13,9 +13,7 @@ public class Project {
 
     private String title;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "project_type")
-    private ProjectType projectType;
+    private String type;
 
     private String objective;
 
@@ -49,7 +47,7 @@ public class Project {
     }
 
     public Project(String title,
-                   ProjectType projectType,
+                   String type,
                    String objective,
                    String photoBefore,
                    String uniqueness,
@@ -61,7 +59,7 @@ public class Project {
                    ProjectProgress projectProgress) {
 
         this.title = title;
-        this.projectType = projectType;
+        this.type = type;
         this.objective = objective;
         this.photoBefore = photoBefore;
         this.uniqueness = uniqueness;
@@ -89,12 +87,12 @@ public class Project {
         this.title = title;
     }
 
-    public ProjectType getProjectType() {
-        return projectType;
+    public String getType() {
+        return type;
     }
 
-    public void setProjectType(ProjectType projectType) {
-        this.projectType = projectType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getObjective() {
