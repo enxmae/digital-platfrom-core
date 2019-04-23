@@ -1,4 +1,4 @@
-package com.dvfu.digital_platform_core.dao;
+package com.dvfu.digital_platform_core.constants;
 
 public enum UserRoleName {
     ROLE_TOURIST,

@@ -1,7 +1,10 @@
 package com.dvfu.digital_platform_core.service.impl;
 
+import com.dvfu.digital_platform_core.constants.ProjectToProduct;
+import com.dvfu.digital_platform_core.dao.Product;
 import com.dvfu.digital_platform_core.dao.Project;
-import com.dvfu.digital_platform_core.dao.ProjectProgress;
+import com.dvfu.digital_platform_core.constants.ProjectProgress;
+import com.dvfu.digital_platform_core.repository.ProductRepository;
 import com.dvfu.digital_platform_core.repository.ProjectRepository;
 import com.dvfu.digital_platform_core.service.ProjectService;
 import org.springframework.beans.BeanUtils;
@@ -14,8 +17,11 @@ public class ProjectServiceImpl implements ProjectService {
 
     private final ProjectRepository projectRepository;
 
-    ProjectServiceImpl(ProjectRepository projectRepository) {
+    private final ProductRepository productRepository;
+
+    ProjectServiceImpl(ProjectRepository projectRepository, ProductRepository productRepository) {
         this.projectRepository = projectRepository;
+        this.productRepository = productRepository;
     }
 
     @Override
@@ -50,7 +56,7 @@ public class ProjectServiceImpl implements ProjectService {
 
         BeanUtils.copyProperties(project, projectFromDB, "id");
 
-        if(checkCrowdfundingDone(project))
+        if(checkCrowdfundingDone(project) && project.getProjectProgress() != ProjectProgress.FINISHED)
             setCrowdfundingDoneStatus(project);
         else
             setInProgressStatus(project);
@@ -95,9 +101,25 @@ public class ProjectServiceImpl implements ProjectService {
     public void addMoney(Project project, Double money) {
         project.setCurrentFinancing(project.getCurrentFinancing() + money);
 
-        if(checkCrowdfundingDone(project))
+        if(checkCrowdfundingDone(project)) {
             setCrowdfundingDoneStatus(project);
 
+            if(project.getProjectToProduct().equals(ProjectToProduct.AUTO)) {
+                setFinishedStatus(project);
+                transferProjectToProduct(project);
+            }
+        }
+
         update(project.getId(), project);
+    }
+
+    @Override
+    public void transferProjectToProduct(Project project) {
+        Product newProduct = new Product();
+        newProduct.setOriginalTitle(project.getTitle());
+
+        update(project.getId(), project);
+
+        productRepository.save(newProduct);
     }
 }

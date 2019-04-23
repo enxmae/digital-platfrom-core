@@ -1,5 +1,6 @@
 package com.dvfu.digital_platform_core.dao;
 
+import com.dvfu.digital_platform_core.constants.UserRoleName;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 

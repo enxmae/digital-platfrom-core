@@ -23,7 +23,6 @@ public class TourController {
     }
 
     @GetMapping("/{id}")
-    @ResponseBody
     public Note getTourById(@PathVariable Long id) {
         return tourService.findTourById(id);
     }

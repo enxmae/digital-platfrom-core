@@ -3,7 +3,7 @@ package com.dvfu.digital_platform_core.service.impl;
 import com.dvfu.digital_platform_core.dao.Authority;
 import com.dvfu.digital_platform_core.dao.User;
 import com.dvfu.digital_platform_core.dao.UserRequest;
-import com.dvfu.digital_platform_core.dao.UserRoleName;
+import com.dvfu.digital_platform_core.constants.UserRoleName;
 import com.dvfu.digital_platform_core.repository.UserRepository;
 import com.dvfu.digital_platform_core.service.AuthorityService;
 import com.dvfu.digital_platform_core.service.UserService;

@@ -1,7 +1,6 @@
 package com.dvfu.digital_platform_core.service;
 
 import com.dvfu.digital_platform_core.dao.Project;
-import com.dvfu.digital_platform_core.dao.ProjectProgress;
 
 import java.util.List;
 
@@ -29,8 +28,13 @@ public interface ProjectService {
 
     void setFinishedStatus(Project project);
 
+
+
     void donationsIncrement(Project project);
 
     void addMoney(Project project, Double money);
+
+    void transferProjectToProduct(Project project);
+
 
 }

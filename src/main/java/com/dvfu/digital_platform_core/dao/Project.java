@@ -1,5 +1,8 @@
 package com.dvfu.digital_platform_core.dao;
 
+import com.dvfu.digital_platform_core.constants.ProjectProgress;
+import com.dvfu.digital_platform_core.constants.ProjectToProduct;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -37,6 +40,9 @@ public class Project {
     private Integer donationAmount = 0;
 
     @Enumerated(EnumType.STRING)
+    private ProjectToProduct projectToProduct;
+
+    @Enumerated(EnumType.STRING)
     private ProjectProgress projectProgress;
 
     @OneToMany(mappedBy = "takerProject")
@@ -56,7 +62,8 @@ public class Project {
                    Double currentFinancing,
                    Double minDonationSum,
                    Double implementationPeriod,
-                   ProjectProgress projectProgress) {
+                   ProjectProgress projectProgress,
+                   ProjectToProduct projectToProduct) {
 
         this.title = title;
         this.type = type;
@@ -69,6 +76,7 @@ public class Project {
         this.minDonationSum = minDonationSum;
         this.implementationPeriod = implementationPeriod;
         this.projectProgress = projectProgress;
+        this.projectToProduct = projectToProduct;
     }
 
     public Long getId() {
@@ -173,5 +181,13 @@ public class Project {
 
     public void setProjectProgress(ProjectProgress projectProgress) {
         this.projectProgress = projectProgress;
+    }
+
+    public ProjectToProduct getProjectToProduct() {
+        return projectToProduct;
+    }
+
+    public void setProjectToProduct(ProjectToProduct projectToProduct) {
+        this.projectToProduct = projectToProduct;
     }
 }

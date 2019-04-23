@@ -21,13 +21,6 @@ public class TourServiceImpl implements TourService {
     }
 
     public Note findTourById(Long id){
-
-        /*Tour tour = tourRepository.getOne(id);
-        List<Product> products = tour.getProducts();
-        TourNotification tourNotification = new TourNotification();
-        tourNotification.setProductOwnerName(products.get(0).getOriginalTitle());
-        return  tourNotification;*/
-
         return tourRepository.findTourById(id);
 
     }

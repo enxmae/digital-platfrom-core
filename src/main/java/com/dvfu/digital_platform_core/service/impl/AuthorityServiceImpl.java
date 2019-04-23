@@ -1,7 +1,7 @@
 package com.dvfu.digital_platform_core.service.impl;
 
 import com.dvfu.digital_platform_core.dao.Authority;
-import com.dvfu.digital_platform_core.dao.UserRoleName;
+import com.dvfu.digital_platform_core.constants.UserRoleName;
 import com.dvfu.digital_platform_core.repository.AuthorityRepository;
 import com.dvfu.digital_platform_core.service.AuthorityService;
 import org.springframework.beans.factory.annotation.Autowired;
