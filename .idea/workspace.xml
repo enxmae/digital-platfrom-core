@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edc99512-b88c-4def-95a6-a3cf271d06ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/TourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/TourController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/ProjectProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/constants/ProjectProgress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/TourProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/constants/TourProgress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/UserRoleName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/constants/UserRoleName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/repository/AuthorityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/repository/AuthorityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/AuthorityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/AuthorityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/AuthorityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/AuthorityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/ProjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/TourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/TourService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/TourServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/TourServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,37 +20,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/ProjectServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="109" column="13" lean-forward="true" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#835#836#0" expanded="true" />
-                <element signature="e#886#887#0" expanded="true" />
-                <element signature="e#2332#2333#0" expanded="true" />
-                <element signature="e#2400#2401#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/TourController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state relative-caret-position="252">
+              <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#889#890#0" expanded="true" />
+                <element signature="e#946#947#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/TourService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+            <state relative-caret-position="225">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,45 +45,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Product.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/TourServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
+            <state relative-caret-position="300">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2349#2350#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Project.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2130#2131#0" expanded="true" />
-                <element signature="e#2224#2225#0" expanded="true" />
-                <element signature="e#2252#2253#0" expanded="true" />
-                <element signature="e#4248#4249#0" expanded="true" />
-                <element signature="e#4302#4303#0" expanded="true" />
-                <element signature="e#4355#4356#0" expanded="true" />
-                <element signature="e#4394#4395#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/ProjectService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#883#884#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -183,14 +118,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/DonationController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Donation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/TourServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/constants/ProjectToProduct.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/TourController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Project.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/ProjectService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/TourService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/ProjectServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/TourController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/TourService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/TourServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -412,12 +347,12 @@
       <workItem from="1555854917193" duration="5886000" />
       <workItem from="1555862003762" duration="3389000" />
       <workItem from="1555922643088" duration="18248000" />
-      <workItem from="1555999006952" duration="9277000" />
+      <workItem from="1555999006952" duration="9563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133279000" />
+    <option name="totallyTimeSpent" value="133565000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -814,16 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/TourServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/constants/ProjectProgress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -883,26 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/TourController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/TourService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/dao/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -934,16 +839,23 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/ProjectService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/ProjectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
+        <state relative-caret-position="307">
           <caret line="109" column="13" lean-forward="true" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -955,10 +867,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/controller/TourController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        <state relative-caret-position="252">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/TourService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dvfu/digital_platform_core/service/impl/TourServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

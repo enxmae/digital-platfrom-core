@@ -29,8 +29,8 @@ public class TourController {
 
 
     @PostMapping
-    public Tour insert(@RequestBody Tour tour, @RequestBody List<Product> products) {
-        return tourService.insert(tour, products);
+    public Tour insert(@RequestBody Tour tour) {
+        return tourService.insert(tour);
     }
 
 
