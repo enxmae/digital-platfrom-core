@@ -15,7 +15,7 @@ public class TourServiceImpl implements TourService {
         this.tourRepository = tourRepository;
     }
 
-    public Note findTourById(Long id){
+    public Tour findTourById(Long id){
         return tourRepository.findTourById(id);
 
     }

@@ -26,13 +26,12 @@ public class Tour implements Serializable {
     @JoinColumn(name = "owner_id")
     private User owner;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @Fetch(value = FetchMode.SUBSELECT)
     @JoinTable(name = "tour_product",
             joinColumns = @JoinColumn(name = "tour_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id"))
     private List<Product> products;
-
 
     public Long getId() {
         return id;

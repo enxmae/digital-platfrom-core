@@ -7,6 +7,7 @@ import com.dvfu.digital_platform_core.dao.Tour;
 import com.dvfu.digital_platform_core.dao.User;
 import com.dvfu.digital_platform_core.dto.TourNotification;
 import com.dvfu.digital_platform_core.service.TourService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/tours")
+//@PreAuthorize("hasRole('SPNA')")
 public class TourController {
 
     private final TourService tourService;
@@ -23,7 +25,7 @@ public class TourController {
     }
 
     @GetMapping("/{id}")
-    public Note getTourById(@PathVariable Long id) {
+    public Tour getTourById(@PathVariable Long id) {
         return tourService.findTourById(id);
     }
 

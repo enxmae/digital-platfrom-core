@@ -11,7 +11,7 @@ import java.util.List;
 public interface TourService {
 
     //TourNotification findTourById(Long id);
-    Note findTourById(Long id);
+    Tour findTourById(Long id);
 
     Tour insert(Tour tour);
 

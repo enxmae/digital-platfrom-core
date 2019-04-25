@@ -10,7 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/projects")
-
 public class ProjectController {
 
     private final ProjectService projectService;
