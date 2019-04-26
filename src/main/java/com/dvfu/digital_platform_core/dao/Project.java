@@ -1,7 +1,8 @@
 package com.dvfu.digital_platform_core.dao;
 
 import com.dvfu.digital_platform_core.constants.ProjectProgress;
-import com.dvfu.digital_platform_core.constants.ProjectToProduct;
+import com.dvfu.digital_platform_core.constants.Project2ProductMode;
+import com.dvfu.digital_platform_core.constants.ProjectVotingPrivateLevel;
 
 import javax.persistence.*;
 import java.util.List;
@@ -40,10 +41,13 @@ public class Project {
     private Integer donationAmount = 0;
 
     @Enumerated(EnumType.STRING)
-    private ProjectToProduct projectToProduct;
+    private Project2ProductMode project2ProductMode;
 
     @Enumerated(EnumType.STRING)
     private ProjectProgress projectProgress;
+
+    @Enumerated(EnumType.STRING)
+    private ProjectVotingPrivateLevel votingPrivateLevel;
 
     @OneToMany(mappedBy = "takerProject")
     private List<Donation> donations;
@@ -63,7 +67,8 @@ public class Project {
                    Double minDonationSum,
                    Double implementationPeriod,
                    ProjectProgress projectProgress,
-                   ProjectToProduct projectToProduct) {
+                   Project2ProductMode project2ProductMode,
+                   ProjectVotingPrivateLevel votingPrivateLevel) {
 
         this.title = title;
         this.type = type;
@@ -76,7 +81,8 @@ public class Project {
         this.minDonationSum = minDonationSum;
         this.implementationPeriod = implementationPeriod;
         this.projectProgress = projectProgress;
-        this.projectToProduct = projectToProduct;
+        this.project2ProductMode = project2ProductMode;
+        this.votingPrivateLevel = votingPrivateLevel;
     }
 
     public Long getId() {
@@ -183,11 +189,19 @@ public class Project {
         this.projectProgress = projectProgress;
     }
 
-    public ProjectToProduct getProjectToProduct() {
-        return projectToProduct;
+    public Project2ProductMode getProject2ProductMode() {
+        return project2ProductMode;
     }
 
-    public void setProjectToProduct(ProjectToProduct projectToProduct) {
-        this.projectToProduct = projectToProduct;
+    public void setProject2ProductMode(Project2ProductMode project2ProductMode) {
+        this.project2ProductMode = project2ProductMode;
+    }
+
+    public ProjectVotingPrivateLevel getVotingPrivateLevel() {
+        return votingPrivateLevel;
+    }
+
+    public void setVotingPrivateLevel(ProjectVotingPrivateLevel votingPrivateLevel) {
+        this.votingPrivateLevel = votingPrivateLevel;
     }
 }

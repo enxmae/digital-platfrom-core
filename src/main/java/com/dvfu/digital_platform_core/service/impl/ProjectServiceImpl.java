@@ -1,6 +1,6 @@
 package com.dvfu.digital_platform_core.service.impl;
 
-import com.dvfu.digital_platform_core.constants.ProjectToProduct;
+import com.dvfu.digital_platform_core.constants.Project2ProductMode;
 import com.dvfu.digital_platform_core.dao.Product;
 import com.dvfu.digital_platform_core.dao.Project;
 import com.dvfu.digital_platform_core.constants.ProjectProgress;
@@ -104,7 +104,7 @@ public class ProjectServiceImpl implements ProjectService {
         if(checkCrowdfundingDone(project)) {
             setCrowdfundingDoneStatus(project);
 
-            if(project.getProjectToProduct().equals(ProjectToProduct.AUTO)) {
+            if(project.getProject2ProductMode().equals(Project2ProductMode.AUTO)) {
                 setFinishedStatus(project);
                 transferProjectToProduct(project);
             }
