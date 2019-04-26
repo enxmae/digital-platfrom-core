@@ -13,6 +13,8 @@ public interface TourService {
     //TourNotification findTourById(Long id);
     Tour findTourById(Long id);
 
+    List<Tour> findAll();
+
     Tour insert(Tour tour);
 
 }

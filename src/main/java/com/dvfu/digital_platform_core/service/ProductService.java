@@ -18,4 +18,6 @@ public interface ProductService {
 
     Product update(Long id, Product product);
 
+    List<Product> findTest(String originalTitle, Integer anthopogenLoad);
+
 }

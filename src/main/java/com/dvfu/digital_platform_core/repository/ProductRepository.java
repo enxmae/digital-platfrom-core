@@ -9,4 +9,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     List<Product> findAllByOwner_Id(Long id);
 
+    List<Product> findAllByOriginalTitleAndAnthropogenicLoad(String originalTitle, Integer anthopogenicLoad);
+
 }

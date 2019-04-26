@@ -2,6 +2,7 @@ package com.dvfu.digital_platform_core.controller;
 
 import com.dvfu.digital_platform_core.dao.Product;
 import com.dvfu.digital_platform_core.dao.ProductEntryPoint;
+import com.dvfu.digital_platform_core.dao.ProductRequest;
 import com.dvfu.digital_platform_core.service.ProductService;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -52,6 +53,11 @@ public class ProductController {
     @PreAuthorize("hasRole('SPNA')")
     public Product update(@RequestBody Product product) {
         return productService.update(product.getId(), product);
+    }
+
+    @GetMapping("/search")
+    public List<Product> getTest() {
+        return productService.findTest("A", 1);
     }
 
 }

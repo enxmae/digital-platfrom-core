@@ -51,4 +51,8 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.save(productFromDB);
     }
 
+    @Override
+    public List<Product> findTest(String originalTitle, Integer anthopogenLoad) {
+        return productRepository.findAllByOriginalTitleAndAnthropogenicLoad(originalTitle, anthopogenLoad);
+    }
 }
