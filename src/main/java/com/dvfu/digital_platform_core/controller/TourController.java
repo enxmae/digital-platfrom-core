@@ -23,6 +23,12 @@ public class TourController {
         return tourService.findTourById(id);
     }
 
+    @GetMapping("/tour_operator/{ownerId}")
+    @PreAuthorize("hasRole('TOUR_OPERATOR')")
+    public List<Tour> getSPNAsProducts(@PathVariable Long ownerId) {
+        return tourService.findAll(ownerId);
+    }
+
     @GetMapping
     public List<Tour> getAll() {
         return tourService.findAll();

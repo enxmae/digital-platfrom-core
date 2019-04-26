@@ -1,6 +1,5 @@
 package com.dvfu.digital_platform_core.service.impl;
 
-import com.dvfu.digital_platform_core.dao.Note;
 import com.dvfu.digital_platform_core.dao.Tour;
 import com.dvfu.digital_platform_core.repository.TourRepository;
 import com.dvfu.digital_platform_core.service.TourService;
@@ -25,6 +24,11 @@ public class TourServiceImpl implements TourService {
     @Override
     public List<Tour> findAll() {
         return tourRepository.findAll();
+    }
+
+    @Override
+    public List<Tour> findAll(Long ownerId) {
+        return tourRepository.findAllByOwner_Id(ownerId);
     }
 
     public Tour insert(Tour tour) {

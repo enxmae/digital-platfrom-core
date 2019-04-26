@@ -73,4 +73,5 @@ public class Tour implements Serializable {
         this.description = description;
     }
 
+
 }
