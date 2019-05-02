@@ -56,10 +56,8 @@ public class ProjectServiceImpl implements ProjectService {
 
         BeanUtils.copyProperties(project, projectFromDB, "id");
 
-        if(checkCrowdfundingDone(project) && project.getProjectProgress() != ProjectProgress.FINISHED)
-            setCrowdfundingDoneStatus(project);
-        else
-            setInProgressStatus(project);
+        if(!checkCrowdfundingDone(projectFromDB))
+            setInProgressStatus(projectFromDB);
 
         return projectRepository.save(projectFromDB);
     }
@@ -117,8 +115,6 @@ public class ProjectServiceImpl implements ProjectService {
     public void transferProjectToProduct(Project project) {
         Product newProduct = new Product();
         newProduct.setOriginalTitle(project.getTitle());
-
-        update(project.getId(), project);
 
         productRepository.save(newProduct);
     }
