@@ -25,7 +25,6 @@ public class ProjectController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyRole('SPNA', 'TOUR_OPERATOR')")
     public Project getProductById(@PathVariable Long id) {
         return projectService.findById(id);
     }

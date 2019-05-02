@@ -26,6 +26,8 @@ public class Tour implements Serializable {
     @JoinColumn(name = "owner_id")
     private User owner;
 
+
+
     @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @Fetch(value = FetchMode.SUBSELECT)
     @JoinTable(name = "tour_product",

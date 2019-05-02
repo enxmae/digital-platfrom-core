@@ -21,7 +21,7 @@ public class DonationController {
         this.projectService = projectService;
     }
 
-    @GetMapping("/{project_id}")
+    @GetMapping("/{projectId}")
     @PreAuthorize("hasAnyRole('TOUR_OPERATOR', 'SPNA', 'TOURIST')")
     List<Donation> getTourOpearators(@PathVariable Long projectId) {
         return donationService.findAllTourOperatorByProjectId(projectId);
