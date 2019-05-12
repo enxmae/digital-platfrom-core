@@ -106,8 +106,17 @@ public class TourServiceImpl implements TourService {
 
     @Override
     public boolean checkTourProgressOK(Long tourId) {
+        List<ToursProducts> products = tourProductRepository.findAllByTour_Id(tourId);
 
-        return false;
+        Integer OKCounter = 0;
+
+        for(ToursProducts product : products) {
+            if(product.getTourProgress().equals(TourProgress.OK)){
+                OKCounter += 1;
+            }
+        }
+
+        return OKCounter.equals(products.size());
     }
 
     @Override
@@ -116,8 +125,26 @@ public class TourServiceImpl implements TourService {
                         tourProduct.getProduct().getId());
 
         BeanUtils.copyProperties(tourProduct, tourProductFromDB, "id");
+        tourProductRepository.save(tourProductFromDB);
 
-        return tourProductRepository.save(tourProductFromDB);
+
+        if(checkTourProgressOK(tourProductFromDB.getTour().getId())) {
+            setOKStatus(tourProductFromDB.getTour());
+        } else{
+            setInProgressStatus(tourProductFromDB.getTour());
+        }
+
+        return tourProductFromDB;
+    }
+
+    private void setOKStatus(Tour tour) {
+        tour.setTourProgress(TourProgress.OK);
+        tourRepository.save(tour);
+    }
+
+    private void setInProgressStatus(Tour tour) {
+        tour.setTourProgress(TourProgress.IN_PROGRESS);
+        tourRepository.save(tour);
     }
 
 }

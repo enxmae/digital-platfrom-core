@@ -35,7 +35,7 @@ public class TourController {
     public List<TourResponse> getAll() {
         return tourService.findAll();
     }
-    
+
     @PostMapping
     @PreAuthorize("hasRole('TOUR_OPERATOR')")
     public Tour insert(@RequestBody TourRequest tour) {
