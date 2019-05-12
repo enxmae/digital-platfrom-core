@@ -1,8 +1,10 @@
 package com.dvfu.digital_platform_core.dao;
 
 
+import com.dvfu.digital_platform_core.constants.TourProgress;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,14 +28,12 @@ public class Tour implements Serializable {
     @JoinColumn(name = "owner_id")
     private User owner;
 
+    @OneToMany(mappedBy = "tour")
+    private List<TourProduct> tourProducts;
 
+    @Enumerated(EnumType.STRING)
+    private TourProgress tourProgress;
 
-    @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
-    @JoinTable(name = "tour_product",
-            joinColumns = @JoinColumn(name = "tour_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id"))
-    private List<Product> products;
 
     public Long getId() {
         return id;
@@ -59,14 +59,6 @@ public class Tour implements Serializable {
         this.owner = owner;
     }
 
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -75,5 +67,11 @@ public class Tour implements Serializable {
         this.description = description;
     }
 
+    public TourProgress getTourProgress() {
+        return tourProgress;
+    }
 
+    public void setTourProgress(TourProgress tourProgress) {
+        this.tourProgress = tourProgress;
+    }
 }

@@ -20,9 +20,9 @@ public class NotificationController {
         this.notificationService = notificationService;
     }
 
-    @GetMapping("/tours/{productOwnerId}")
-    List<TourCreateNotification> getNotification(@PathVariable Long productOwnerId) {
-        return notificationService.sendNotification(productOwnerId);
+    @GetMapping("/tours/{tourId}")
+    List<TourCreateNotification> getNotification(@PathVariable Long tourId) {
+        return notificationService.sendNotification(tourId);
     }
 
 }

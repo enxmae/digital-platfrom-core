@@ -4,19 +4,31 @@ import java.util.List;
 
 public interface TourCreateNotification {
 
-    String getTitle();
+    TourData getTour();
 
-    ProductData getProducts();
-
-    OwnerData getOwner();
+    ProductData getProduct();
 
     interface ProductData{
         String getOriginalTitle();
+        OwnerData getOwner();
+
+        interface OwnerData {
+            String getId();
+        }
+
     }
 
-    interface OwnerData {//название турагенства
-        String getUsername();
+    interface  TourData {
+        String getTitle();
+        OwnerData getOwner();
+
+        interface OwnerData {//название турагенства
+            String getUsername();
+        }
+
     }
+
+
 
 }
 

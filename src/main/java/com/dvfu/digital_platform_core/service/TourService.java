@@ -1,18 +1,28 @@
 package com.dvfu.digital_platform_core.service;
 
-import com.dvfu.digital_platform_core.dao.Tour;
+import com.dvfu.digital_platform_core.dao.*;
 
 import java.util.List;
 
 public interface TourService {
 
     //TourNotification findTourById(Long id);
-    Tour findTourById(Long id);
+    TourResponse findTourById(Long id);
 
-    List<Tour> findAll();
+    List<TourResponse> findAll();
 
-    List<Tour> findAll(Long ownerId);
+    List<TourResponse> findAll(Long ownerId);
 
-    Tour insert(Tour tour);
+    Tour insert(TourRequest tourRequest);
+
+    List<ToursProducts> test(Long tourId);
+
+    boolean checkTourProgressOK(Long tourId);
+
+    TourResponse createTourResponse(Tour tour, List<ToursProducts> products);
+
+    Tour createTour(TourRequest tourRequest);
+
+    TourProduct setProductProgress(TourProduct tourProduct);
 
 }

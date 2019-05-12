@@ -1,6 +1,7 @@
 package com.dvfu.digital_platform_core.service.impl;
 
 import com.dvfu.digital_platform_core.dao.TourCreateNotification;
+import com.dvfu.digital_platform_core.repository.TourProductRepository;
 import com.dvfu.digital_platform_core.repository.TourRepository;
 import com.dvfu.digital_platform_core.service.NotificationService;
 import org.springframework.stereotype.Service;
@@ -10,14 +11,14 @@ import java.util.List;
 @Service
 public class NotificationServiceImpl implements NotificationService {
 
-    private final TourRepository tourRepository;
+    private final TourProductRepository tourProductRepository;
 
-    NotificationServiceImpl(TourRepository tourRepository) {
-        this.tourRepository = tourRepository;
+    NotificationServiceImpl(TourProductRepository tourProductRepository) {
+        this.tourProductRepository = tourProductRepository;
     }
 
     @Override
-    public List<TourCreateNotification> sendNotification(Long productsOwnerId) {
-        return tourRepository.findToursByProducts_Owner_Id(productsOwnerId);
+    public List<TourCreateNotification> sendNotification(Long tourId) {
+        return tourProductRepository.findAllTourProductByTour_Id(tourId);
     }
 }

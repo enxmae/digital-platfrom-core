@@ -62,7 +62,7 @@ public class Project {
                    String photoBefore,
                    String uniqueness,
                    User owner,
-                   Double totalProjectFinancing,
+                   Double totalFinancing,
                    Double currentFinancing,
                    Double minDonationSum,
                    Double implementationPeriod,
@@ -76,7 +76,7 @@ public class Project {
         this.photoBefore = photoBefore;
         this.uniqueness = uniqueness;
         this.owner = owner;
-        this.totalFinancing = totalProjectFinancing;
+        this.totalFinancing = totalFinancing;
         this.currentFinancing = currentFinancing;
         this.minDonationSum = minDonationSum;
         this.implementationPeriod = implementationPeriod;

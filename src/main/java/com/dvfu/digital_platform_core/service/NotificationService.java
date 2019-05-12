@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface NotificationService {
 
-    List<TourCreateNotification> sendNotification(Long productsOwnerId);
+    List<TourCreateNotification> sendNotification(Long tourId);
 
 }

@@ -10,10 +10,10 @@ public interface TourRepository extends JpaRepository<Tour, Long> {
 //    @Query("SELECT title, owner.id FROM Tour WHERE id = :id")
 //    List<Tour> findTitleTest(@Param("id") Long id);
 
-    List<TourCreateNotification> findToursByProducts_Owner_Id(Long productsOwnerId);//статус неодобрен
+    //List<TourCreateNotification> findToursByProducts_Owner_Id(Long productsOwnerId);//статус неодобрен
 
     Tour findTourById(Long id);
 
     List<Tour> findAllByOwner_Id(Long id);
-    //show tours by onwer
+
 }

@@ -44,6 +44,9 @@ public class Product implements Serializable {
     @JoinColumn(name = "owner_id")
     private User owner;
 
+    @OneToMany(mappedBy = "product")
+    private List<TourProduct> tourProducts;
+
     public Product() {
     }
 
