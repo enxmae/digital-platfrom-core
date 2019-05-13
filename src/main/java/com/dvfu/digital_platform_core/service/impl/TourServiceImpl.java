@@ -124,8 +124,7 @@ public class TourServiceImpl implements TourService {
         TourProduct tourProductFromDB = tourProductRepository.findByTour_IdAndProduct_Id(tourProduct.getTour().getId(),
                         tourProduct.getProduct().getId());
 
-        BeanUtils.copyProperties(tourProduct, tourProductFromDB, "id");
-        tourProductRepository.save(tourProductFromDB);
+
 
 
         if(checkTourProgressOK(tourProductFromDB.getTour().getId())) {
@@ -134,17 +133,32 @@ public class TourServiceImpl implements TourService {
             setInProgressStatus(tourProductFromDB.getTour());
         }
 
+        update(tourProductFromDB.getTour().getId(), tourProductFromDB.getTour());
+        BeanUtils.copyProperties(tourProduct, tourProductFromDB, "id");
+        tourProductRepository.save(tourProductFromDB);
         return tourProductFromDB;
     }
 
     private void setOKStatus(Tour tour) {
         tour.setTourProgress(TourProgress.OK);
-        tourRepository.save(tour);
+
     }
 
     private void setInProgressStatus(Tour tour) {
         tour.setTourProgress(TourProgress.IN_PROGRESS);
-        tourRepository.save(tour);
+        //update(tour.getId(), tour);
+    }
+
+
+    private Tour update(Long id, Tour tour) {
+        Tour tourFromDB = tourRepository.findTourById(id);
+
+        BeanUtils.copyProperties(tour, tourFromDB, "id");
+
+
+
+        tourRepository.save(tourFromDB);
+        return  tourFromDB;
     }
 
 }
