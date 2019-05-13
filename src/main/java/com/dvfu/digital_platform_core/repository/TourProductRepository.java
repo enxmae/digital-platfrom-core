@@ -1,5 +1,6 @@
 package com.dvfu.digital_platform_core.repository;
 
+import com.dvfu.digital_platform_core.constants.TourProgress;
 import com.dvfu.digital_platform_core.dao.TourCreateNotification;
 import com.dvfu.digital_platform_core.dao.TourProduct;
 import com.dvfu.digital_platform_core.dao.ToursProducts;

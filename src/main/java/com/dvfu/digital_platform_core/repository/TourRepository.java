@@ -1,5 +1,6 @@
 package com.dvfu.digital_platform_core.repository;
 
+import com.dvfu.digital_platform_core.constants.TourProgress;
 import com.dvfu.digital_platform_core.dao.TourCreateNotification;
 import com.dvfu.digital_platform_core.dao.Tour;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,5 +16,7 @@ public interface TourRepository extends JpaRepository<Tour, Long> {
     Tour findTourById(Long id);
 
     List<Tour> findAllByOwner_Id(Long id);
+
+    List<Tour> findAllByTourProgress(TourProgress tourProgress);
 
 }

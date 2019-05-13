@@ -32,7 +32,7 @@ public class TourServiceImpl implements TourService {
 
     @Override
     public List<TourResponse> findAll() {
-        List<Tour> tours = tourRepository.findAll();
+        List<Tour> tours = tourRepository.findAllByTourProgress(TourProgress.OK);
         List<TourResponse> tourResponses = new ArrayList<>();
 
         for(Tour tour : tours) {
