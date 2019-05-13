@@ -59,12 +59,12 @@ public class TourServiceImpl implements TourService {
     public Tour insert(TourRequest tourRequest) {
         Tour tour = new Tour();
         tour = createTour(tourRequest);
-        tour.setTourProgress(TourProgress.PENDINDG);
+        tour.setTourProgress(TourProgress.IN_PROGRESS);
 
         tourRepository.save(tour);
 
         for(int i = 0; i < tourRequest.getProducts().size(); i++) {
-            TourProduct tourProduct = new TourProduct(tour, tourRequest.getProducts().get(i), TourProgress.PENDINDG);
+            TourProduct tourProduct = new TourProduct(tour, tourRequest.getProducts().get(i), TourProgress.IN_PROGRESS);
             tourProductRepository.save(tourProduct);
         }
 
