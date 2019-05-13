@@ -18,7 +18,7 @@ public class NotificationServiceImpl implements NotificationService {
     }
 
     @Override
-    public List<TourCreateNotification> sendNotification(Long tourId) {
-        return tourProductRepository.findAllTourProductByTour_Id(tourId);
+    public List<TourCreateNotification> sendNotification(Long ownerId) {
+        return tourProductRepository.findAllTourProductByProduct_Owner_Id(ownerId);
     }
 }

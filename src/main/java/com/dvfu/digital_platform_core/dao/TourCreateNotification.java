@@ -10,12 +10,6 @@ public interface TourCreateNotification {
 
     interface ProductData{
         String getOriginalTitle();
-        OwnerData getOwner();
-
-        interface OwnerData {
-            String getId();
-        }
-
     }
 
     interface  TourData {
