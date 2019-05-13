@@ -9,10 +9,12 @@ public interface TourCreateNotification {
     ProductData getProduct();
 
     interface ProductData{
+        Long getId();
         String getOriginalTitle();
     }
 
     interface  TourData {
+        Long getId();
         String getTitle();
         OwnerData getOwner();
 
