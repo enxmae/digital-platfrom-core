@@ -37,7 +37,7 @@ public class TourController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('TOUR_OPERATOR')")
+    //@PreAuthorize("hasRole('TOUR_OPERATOR')")
     public Tour insert(@RequestBody TourRequest tour) {
         return tourService.insert(tour);
     }
@@ -49,5 +49,7 @@ public class TourController {
     public TourProduct vote4ToursProductProgress(@RequestBody TourProduct tourProduct) {
         return tourService.setProductProgress(tourProduct);
     }
+
+
 
 }

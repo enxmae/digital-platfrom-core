@@ -1,5 +1,6 @@
 package com.dvfu.digital_platform_core.service.impl;
 
+import com.dvfu.digital_platform_core.constants.TourProgress;
 import com.dvfu.digital_platform_core.dao.TourCreateNotification;
 import com.dvfu.digital_platform_core.repository.TourProductRepository;
 import com.dvfu.digital_platform_core.repository.TourRepository;
@@ -19,6 +20,6 @@ public class NotificationServiceImpl implements NotificationService {
 
     @Override
     public List<TourCreateNotification> sendNotification(Long ownerId) {
-        return tourProductRepository.findAllTourProductByProduct_Owner_Id(ownerId);
+        return tourProductRepository.findAllTourProductByTourProgressAndProduct_Owner_Id(TourProgress.IN_PROGRESS, ownerId);
     }
 }

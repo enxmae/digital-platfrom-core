@@ -14,6 +14,7 @@ public interface TourProductRepository extends JpaRepository<TourProduct, Long> 
 
     TourProduct findByTour_IdAndProduct_Id(Long tourId, Long productId);
 
-    List<TourCreateNotification> findAllTourProductByProduct_Owner_Id(Long ownerId);
+    List<TourCreateNotification>
+    findAllTourProductByTourProgressAndProduct_Owner_Id(TourProgress tourProgress, Long ownerId);
 
 }

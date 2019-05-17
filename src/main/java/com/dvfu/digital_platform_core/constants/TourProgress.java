@@ -1,7 +1,7 @@
 package com.dvfu.digital_platform_core.constants;
 
 public enum TourProgress {
-    PENDINDG,
+    OPEN,
     DENIED,
     OK,
     IN_PROGRESS
